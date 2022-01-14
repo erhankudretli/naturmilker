@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/****************************************
+FOOTER
+******************************************/
+footer {
+    background-color: #80A142;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+.socialIcon {
+    margin-right: 12px;
+}
+
+.socialIcon :hover {
+    opacity: 95%;
+}
+
+/****************************************
+HOMEPAGE
+******************************************/
+
+.home-page-menu {
+    font-size: 3vh;
+    background-color:#ffffff;
+    margin-top: 40px;
+}
+
+.home-page-links {
+    color: #658628 !important;
+    margin: auto;
+}
+
+.homepage-registerbutton {
+    background-color: #658628 !important;
+    margin-top: 20px;
+}
+
+.home-page-menu-navbar {
+    background-color: #ffffff !important;
+}
+
+.btn-button {
+    background-color: #658628 !important;
+}
+
+.btn-button:hover {
+    opacity: .95;
+}
+
+
+.homepage-registerbutton:hover {
+    opacity: .95;
+}
+
+
+.home-page-header-container {
+    background-color: #ffffff;
+    box-shadow: 0px 15px 18px 4px rgba(128, 161, 66, 0.5);
+
+}
+
+.logo {
+    width: 250px;
+    height: 120px;
+} 
+
+#searchboxtext {
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    text-shadow: 2px 2px rgb(206, 206, 206);
+    font-size: 6vh;
+    color: #445f11;
+}
+
+.searchBoxAreaMain {
+    margin-top: 4vw;
+    margin-bottom: 6vw;
+
+}
+
+.advicedProductsArea {
+    margin-bottom: 6vw;
+}
+
+/****************************************
+My Profil Body
+******************************************/
+/* 
+.profile-body-container {
+    width: 15vh;
+    margin-bottom: 4vh;
+    border: 3px solid #658628;
+    padding: 10px;
+} */
+
+.my-profil-menubar {
+    border: 3px solid #658628;
+}
+
+.button-search:hover {
+    background-color: #658628 !important;
+}
+
+/****************************************
+From Control
+******************************************/
+
+.form-control:not(active) {
+    color: #658628 !important;
+    font-weight: bold;
+}
+
+.form-control:focus,
+.form-control:active {
+    color: rgb(0, 0, 0) !important;
+    outline: none !important;
+}
+
+.form-control:focus {
+    color: rgb(0, 0, 0) !important;
+
+}
+
+/****************************************
+Product Cards
+******************************************/
+.Product-Cards {
+    font-family: 'Righteous', cursive !important;
+}
+
+/****************************************
+Searhed Area Adviced Product Cards
+******************************************/
+
+.SearchedAreaAdvicedProducts {
+    font-family: 'Righteous', cursive !important;
+}
+
+
+.detailed-Product-header {
+    text-shadow: 2px 2px rgb(206, 206, 206);
+    font-size: 6vh;
+    color: #445f11;
+    font-family: 'Righteous', cursive !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+
+    background-color: #445f11 !important;
+}
+
+.nav-item a {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+/****************************************
+Detailed Products
+******************************************/
+.nav-tabs .nav-link {
+    color: #445f11 !important;
+
+}
+
+#uncontrolled-tab-example-tabpane-description {
+    margin-top: 30px;
+}
+
+#uncontrolled-tab-example-tabpane-contact {
+    margin-top: 15px;
+}
+
+#uncontrolled-tab-example-tabpane-navigation {
+    margin-top: 15px;
+}
+
+
+/****************************************
+Update Your Bio Form
+******************************************/
+
+.updatebio-form-header {
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    text-shadow: 2px 2px rgb(206, 206, 206);
+    font-size: 5vh;
+    color: #445f11;
+}

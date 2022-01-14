@@ -1,0 +1,122 @@
+// create relationships
+// https://sequelize.org/master/manual/advanced-many-to-many.html
+// Many-to-many-to-many relationships and beyond
+// db.teacher.belongsToMany(db.lecture, { through: db.class })
+// db.lecture.belongsToMany(db.teacher, { through: db.class })
+// db.class.belongsTo(db.lecture)
+// db.class.belongsTo(db.teacher)
+// db.teacher.hasMany(db.class)
+// db.lecture.hasMany(db.class)
+
+// db.product.belongsToMany(db.class, { through: db.enrollment })
+// db.class.belongsToMany(db.product, { through: db.enrollment })
+// db.enrollment.belongsTo(db.product)
+// db.enrollment.belongsTo(db.class)
+// db.product.hasMany(db.enrollment)
+// db.class.hasMany(db.enrollment)
+
+// use it to force to create the db from scratch 
+// .sync({ force: true })
+
+------------------------------------------------------------------------
+
+
+// // Fetch 10 instances/rows
+// Project.findAll({ limit: 10 });
+
+// // Skip 8 instances/rows
+// Project.findAll({ offset: 8 });
+
+// // Skip 5 instances and fetch the 5 after that
+// Project.findAll({ offset: 5, limit: 5 });
+
+
+
+// max, min and sum
+// Sequelize also provides the max, min and sum convenience methods.
+
+// Let's assume we have three users, whose ages are 10, 5, and 40.
+
+// await User.max('age'); // 40
+// await User.max('age', { where: { age: { [Op.lt]: 20 } } }); // 10
+// await User.min('age'); // 5
+// await User.min('age', { where: { age: { [Op.gt]: 5 } } }); // 10
+// await User.sum('age'); // 55
+// await User.sum('age', { where: { age: { [Op.gt]: 5 } } }); // 50
+
+
+
+// findOne
+// The findOne method obtains the first entry it finds (that fulfills the optional query options, if provided).
+
+// const project = await Project.findOne({ where: { title: 'My Title' } });
+// if (project === null) {
+//   console.log('Not found!');
+// } else {
+//   console.log(project instanceof Project); // true
+//   console.log(project.title); // 'My Title'
+// }
+
+
+
+findAndCountAll
+The findAndCountAll method is a convenience method that combines findAll and count. This is useful when dealing with queries related to pagination where you want to retrieve data with a limit and offset but also need to know the total number of records that match the query.
+
+The findAndCountAll method returns an object with two properties:
+
+count - an integer - the total number records matching the query
+rows - an array of objects - the obtained records
+const { count, rows } = await Project.findAndCountAll({
+  where: {
+    title: {
+      [Op.like]: 'foo%'
+    }
+  },
+  offset: 10,
+  limit: 2
+});
+console.log(count);
+console.log(rows);
+
+
+----------------------------------------------------
+Assocation
+
+// Option 1
+Foo.hasOne(Bar, {
+  foreignKey: 'myFooId'
+});
+Bar.belongsTo(Foo);
+
+// Option 2
+Foo.hasOne(Bar, {
+  foreignKey: {
+    name: 'myFooId'
+  }
+});
+Bar.belongsTo(Foo);
+
+// Option 3
+Foo.hasOne(Bar);
+Bar.belongsTo(Foo, {
+  foreignKey: 'myFooId'
+});
+
+// Option 4
+Foo.hasOne(Bar);
+Bar.belongsTo(Foo, {
+  foreignKey: {
+    name: 'myFooId'
+  }
+});
+
+-----------------------------------------
+
+Assocation  2
+Philosophy
+One-To-Many associations are connecting one source with multiple targets, while all these targets are connected only with this single source.
+
+This means that, unlike the One-To-One association, in which we had to choose where the foreign key would be placed, there is only one option in One-To-Many associations. For example, if one Foo has many Bars (and this way each Bar belongs to one Foo), then the only sensible implementation is to have a fooId column in the Bar table. The opposite is impossible, since one Foo has many Bars.
+
+Team.hasMany(Player);
+Player.belongsTo(Team);
